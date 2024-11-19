@@ -1,0 +1,170 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('anh nen.jpg'); /* Đặt ảnh nền bầu trời */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Mặt trăng */
+.moon {
+    position: absolute;
+    top: 30%; /* Vị trí mặt trăng */
+    left: 20%;
+    width: 150px;  /* Kích thước mặt trăng */
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+    transform: translateX(-50%);
+}
+
+/* Ông già Noel cưỡi tuần lộc */
+.santa-reindeer-container {
+    position: absolute;
+    bottom: 48%; /* Đặt ông già Noel lên cao hơn */
+    right: -400px; /* Bắt đầu bên ngoài màn hình */
+    animation: moveSanta 10s linear infinite; /* Di chuyển mượt mà */
+}
+
+.santa-reindeer {
+    width: 700px;  /* Kích thước ông già Noel và tuần lộc */
+    height: 200px;
+    background: url('ong-gia-noel-cuoi-tuan-loc-.gif') no-repeat center center; /* Ảnh ông già Noel cưỡi tuần lộc */
+    background-size: contain;
+    /* Không cần animation cho tuần lộc nếu ảnh chỉ có một khung hình */
+}
+
+/* Hiệu ứng di chuyển ông già Noel cưỡi tuần lộc */
+@keyframes moveSanta {
+    10% {
+        right: -300px; /* Bắt đầu ngoài màn hình bên trái */
+    }
+    50% {
+        right: 50px; /* Vị trí giữa màn hình */
+        transform: translateX(-50%); /* Đảm bảo chính giữa màn hình */
+    }
+    100% {
+        right: 100%; /* Vị trí ngoài màn hình bên phải */
+    }
+}
+.text-container h1 {
+    position: absolute;
+    top: 10px; /* Cách đỉnh màn hình 10px */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch chuyển về giữa */
+    text-align: center; /* Căn giữa nội dung */
+    color: rgb(228, 22, 22); /* Màu chữ */
+    font-family: 'Arial', sans-serif; /* Font chữ */
+    font-size: 2rem; /* Kích thước chữ */
+    background-color: rgba(71, 17, 137, 0.5); /* Nền đen mờ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    border-radius: 10px; /* Bo tròn góc */
+    z-index: 10; /* Hiển thị trên các phần tử khác */
+    
+}
+
+
+/* Tuyết */
+.snow {
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    pointer-events: none; /* Tuyết không ảnh hưởng đến tương tác */
+    animation: snow-fall 10s linear infinite; /* Hiệu ứng rơi */
+}
+
+/* Tạo ra hiệu ứng rơi cho tuyết */
+@keyframes snow-fall {
+    0% {
+        transform: translateY(-100px); /* Bắt đầu từ trên cùng */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Rơi đến cuối màn hình */
+        opacity: 0;
+    }
+}
+
+/* Tạo các hạt tuyết ngẫu nhiên */
+.snowflake {
+    position: absolute;
+    top: 0;
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.7;
+    animation: snow-fall 10s linear infinite;
+    pointer-events: none; /* Không ảnh hưởng đến sự tương tác */
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 15s;
+    animation-delay: 0s;
+}
+
+.text-container p {
+    position: absolute;
+    top: 100px; /* Cách đỉnh màn hình 10px */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch chuyển về giữa */
+    text-align: center; /* Căn giữa nội dung */
+    color: rgb(22, 228, 32); /* Màu chữ */
+    font-family: 'Arial', sans-serif; /* Font chữ */
+    font-size: 1.5rem; /* Kích thước chữ */
+    background-color: (40, 43, 38, 0.5); /* Nền đen mờ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    border-radius: 10px; /* Bo tròn góc */
+    z-index: 10; /* Hiển thị trên các phần tử khác */
+    
+}
+.new-text-container p {
+    position: absolute;
+    top: 150px; /* Cách đỉnh màn hình 10px */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch chuyển về giữa */
+    text-align: center; /* Căn giữa nội dung */
+    color: rgb(63, 22, 228); /* Màu chữ */
+    font-family: 'Arial', sans-serif; /* Font chữ */
+    font-size: 1.5rem; /* Kích thước chữ */
+    background-color: (40, 43, 38, 0.5); /* Nền đen mờ */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    border-radius: 10px; /* Bo tròn góc */
+    z-index: 10; /* Hiển thị trên các phần tử khác */
+     margin-bottom: 100px; /* Khoảng cách phía dưới tiêu đề */  
+}
+/*
+.text-container h1 {
+    font-size: 2rem; /* Kích thước lớn hơn cho tiêu đề */
+   }
+
+.text-container p {
+    font-size: 2rem; /* Kích thước nhỏ hơn cho đoạn văn */
+}
+
+.text-container h1 {
+    margin-bottom: 100px; /* Khoảng cách phía dưới tiêu đề */
+}
+
+.text-container p {
+    margin-top: 100; /* Xóa khoảng cách phía trên đoạn văn */
+}
+*/
